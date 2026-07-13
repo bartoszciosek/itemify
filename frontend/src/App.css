@@ -1,38 +1,69 @@
-.App {
-  text-align: center;
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fb;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.menu-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.menu-card {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.books-card {
+  background-color: #4f46e5;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.books-card:hover {
+  background-color: #4338ca;
+  transform: scale(1.02);
+  z-index: 2;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.movies-card {
+  background-color: #0ea5e9;
+  color: white;
+}
+.movies-card:hover {
+  background-color: #0284c7;
+  transform: scale(1.02);
+  z-index: 2;
+}
+
+.menu-card h1 {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+}
+
+.menu-card p {
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #1e293b;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+.back-btn:hover {
+  background-color: #0f172a;
 }

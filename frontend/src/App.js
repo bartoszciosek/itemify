@@ -1,24 +1,52 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
+
+function BooksView() {
+  return (
+      <div style={{ padding: '20px' }}>
+        <h2>Zarządzanie Książkami (Books)</h2>
+        <Link to="/" className="back-btn">← Powrót do menu</Link>
+        {}
+      </div>
+  );
+}
+
+function MoviesView() {
+  return (
+      <div style={{ padding: '20px' }}>
+        <h2>Zarządzanie Filmami (Movies)</h2>
+        <Link to="/" className="back-btn">← Powrót do menu</Link>
+        {}
+      </div>
+  );
+}
+
+function HomeMenu() {
+  return (
+      <div className="menu-container">
+        <Link to="/books" className="menu-card books-card">
+          <h1>Books</h1>
+          <p>Zarządzaj bazą książek i autorów</p>
+        </Link>
+
+        <Link to="/movies" className="menu-card movies-card">
+          <h1>Movies</h1>
+          <p>Zarządzaj bazą filmów i reżyserów</p>
+        </Link>
+      </div>
+  );
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomeMenu />} />
+          <Route path="/books" element={<BooksView />} />
+          <Route path="/movies" element={<MoviesView />} />
+        </Routes>
+      </Router>
   );
 }
 
