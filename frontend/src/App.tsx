@@ -1,22 +1,28 @@
-import React, { useState } from 'react';
+import * as React from 'react';
+import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 
-function BooksView() {
+interface Book {
+    id: number;
+    title: string;
+    author: string;
+}
 
-    const [books, setBooks] = useState([
+function BooksView() {
+    const [books, setBooks] = useState<Book[]>([
         { id: 1, title: 'Wiedźmin: Ostatnie życzenie', author: 'Andrzej Sapkowski' },
         { id: 2, title: 'Hobbit', author: 'J.R.R. Tolkien' }
     ]);
 
-    const [title, setTitle] = useState('');
-    const [author, setAuthor] = useState('');
+    const [title, setTitle] = useState<string>('');
+    const [author, setAuthor] = useState<string>('');
 
-    const handleAddBook = (e) => {
-        e.preventDefault();
+    const handleAddBook = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault(); // Powstrzymuje przeładowanie strony
         if (!title.trim() || !author.trim()) return;
 
-        const newBook = {
+        const newBook: Book = {
             id: Date.now(),
             title: title,
             author: author
@@ -33,8 +39,9 @@ function BooksView() {
                 <h2>Zarządzanie Książkami</h2>
                 <Link to="/" className="back-btn">← Powrót do menu</Link>
             </div>
-            {}
+
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px', marginTop: '20px' }}>
+
                 {}
                 <div style={{ background: '#f9f9f9', padding: '20px', borderRadius: '8px', border: '1px solid #ddd' }}>
                     <h3>Dodaj nową książkę</h3>

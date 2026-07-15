@@ -29,7 +29,7 @@
     "moduleNameMapper": {
       "^react-router/dom$": "<rootDir>/node_modules/react-router-dom/dist/index.js"
     }
-},
+  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -41,5 +41,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^26.1.1",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^4.9.5"
   }
 }
