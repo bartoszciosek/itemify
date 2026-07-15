@@ -3,6 +3,7 @@ import React from 'react';
 import App from './App';
 
 import { TextEncoder, TextDecoder } from 'util';
+import * as test from "node:test";
 global.TextEncoder = TextEncoder;
 global.TextDecoder = TextDecoder;
 
